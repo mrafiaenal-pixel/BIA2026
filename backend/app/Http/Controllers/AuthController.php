@@ -47,9 +47,12 @@ class AuthController extends Controller
             'user' => $user
         ]);
     }
-
-public function username(Request $request){
-    $user = auth()->user(); // user yang lagi login
-    return response()->json($user);
-}
+    public function username(Request $request)
+    {
+        $user = auth()->user(); 
+    
+        return response()->json([
+            'name' => $user->name ?? $user->username ?? 'User'
+        ]);
+    }
 }
