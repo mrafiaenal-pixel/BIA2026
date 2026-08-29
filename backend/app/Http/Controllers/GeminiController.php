@@ -26,7 +26,7 @@ class GeminiController extends Controller
         $mimeType = $file->getMimeType();
 
         $response = Http::post(
-            'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=' . env('GEMINI_API_KEY'),
+            'https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:generateContent?key=' . env('GEMINI_API_KEY'),
             [
                 "contents" => [
                     [
